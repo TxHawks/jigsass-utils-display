@@ -1,0 +1,859 @@
+/* ---
+section: u-d (Display)
+title: Introduction
+order: -10
+---
+
+[![NPM version][npm-image]][npm-url]
+[![Dependency Status][daviddm-image]][daviddm-url]
+
+A collection of dynamically generated css `display` utility classes.
+
+Class names follow the [Emmet](http://docs.emmet.io/cheat-sheet/) abbreviation
+syntax, with colons (':') replaced by two dashes (`--`) to follow BEM naming
+conventions (It modifiies the user agent's default display).
+E.g., the `display: none` utility class name is `.u-d--n`.
+
+#### Available classes
+  - `.d--b` (display: block)
+  - `.d--f` (display: flex)
+  - `.d--if` (display: inline-flex)
+  - `.d--i` (display: inline)
+  - `.d--ib` (display: inline-block)
+  - `.d--inher` (display: inherit)
+  - `.d--init` (display: initial)
+  - `.d--li` (display: list-item)
+  - `.d--n` (display: none)
+  - `.d--tb` (display: table)
+  - `.d--iteb` (display: inline-table)
+  - `.d--tbcp` (display: table-caption)
+  - `.d--tbcl` (display: table-column)
+  - `.d--tbclg` (display: table-column-group)
+  - `.d--tbhg` (display: table-header-group)
+  - `.d--tbfg` (display: table-footer-group)
+  - `.d--tbr` (display: table-row)
+  - `.d--tbrg` (display: table-row-group)
+  - `.d--tbc` (display: table-cell)
+  - `.d--rb` (display: ruby)
+  - `.d--rbb` (display: ruby-base)
+  - `.d--rbbg` (display: ruby-base-group)
+  - `.d--rbt` (display: ruby-text)
+  - `.d--rbtg` (display: ruby-text-group)
+
+#### Installation
+
+Using npm:
+
+```sh
+npm i -S jigsass-utils-display
+```
+
+#### Usage
+Import JigSass Utils Display into your main scss file near its very end, together with all
+other utilities (utilities should always be the last to be imported).
+
+```scss
+@import 'path/to/jigsass-utils-display/scss/index';
+```
+
+Like all other JigSass Utils, JigSass Display does not automatically generate any CSS
+when imported. You would need to explicitly indicate that each individual display
+class should actually be generated in each component or object it is used in
+(clarification: This will include style declarations inside `.foo` and .`bar`):
+
+```scss
+// _c.foo.scss
+.foo {
+  @include jigsass-util(u-d, $modifier: b); // <-- display: block
+
+  ...
+}
+```
+
+```scss
+// _c.bar.scss
+.bar {
+  @include jigsass-util(u-d, $modifier: ib);  // <-- display: inline-block
+  @include jigsass-util(
+    u-d,
+    $modifier: f,
+    $from: large
+  ); // <-- display: flex from large bp an on.
+
+  ...
+}
+```
+
+Doing so helps us a great deal with portability, as no matter where we import component or object
+partials, the correct utility classes will be generated. Think of it as a poor man's dependency
+management.
+
+Developer communication is also assisted by including "dependencies" wherever they are required,
+as anyone going through a partial, can easily understand how it should be marked up with just a
+glance.
+
+As far as bloat goes, just don't worry about it - the actual styles will only be generated once,
+at the location in the cascade where the Jigsass Clearfix partial was imported into the main file.
+
+
+JigSass Display classes are responsive-enabled, using [JigSass MQ](https://txhawks.github.io/jigsass-tools-mq/)
+and the breakpoints defined in the [$jigsass-breakpoints](https://txhawks.github.io/jigsass-tools-mq/#variable-jigsass-breakpoints) variable.
+
+Based on the breakpoint arguments passed to `jigsass-util` when including a display class, responsive
+modifiers are generated according to the following logic:
+
+```scss
+.u-d--<modifier>[-[-from-<breakpoint-name>][-until-<breakpoint-name>][-misc-<breakpoint-name>]]
+```
+
+So, assuming the `medium`, `large` and `landscape` breakpoints are defined in `$jigsass-breakpoints`
+as `600px`, `1024px` and `(orientation: landscape)` respectively,
+
+```scss
+@include jigsass-util(u-d, $modifier: f);
+```
+will generate the `.u-d--f` class, which is not limited to any media-query.
+
+```scss
+@include jigsass-util(u-d, $modifier: f, $until: medium);
+```
+
+will generate the `.u-d--f--until-medium` class, which will be in effect at
+`(max-width: 37.49em)` and will override styles in the default class until that point.
+
+```scss
+@include jigsass-util(u-d, $modifier: f, $from: large, $misc: landscape);
+```
+
+will generate the `.u-d--f--from-large-when-landscape` class, which will go into
+effect at `(min-width: 64em) and (orientation: landscape)` and will override styles in the default
+class under these  conditions.
+
+
+**License:** MIT
+
+
+
+[npm-image]: https://badge.fury.io/js/jigsass-utils-display.svg
+[npm-url]: https://npmjs.org/package/jigsass-utils-display
+
+[daviddm-image]: https://david-dm.org/TxHawks/jigsass-utils-display.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/TxHawks/jigsass-utils-display
+*/
+.u-d--b {
+  display: block;
+  /* ---
+section: u-d (Display)
+title: u-d--b (block)
+order: 1
+---
+A util to modify an element's `display` property value to
+`block`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: block[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--b'>
+  This div is display value is set to: <em>block</em>.
+</div>
+```
+*/
+}
+
+.u-d--cp {
+  display: compact;
+  /* ---
+section: u-d (Display)
+title: u-d--cp (compact)
+order: 2
+---
+A util to modify an element's `display` property value to
+`compact`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: compact[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--cp'>
+  This div is display value is set to: <em>compact</em>.
+</div>
+```
+*/
+}
+
+.u-d--f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* ---
+section: u-d (Display)
+title: u-d--f (flex)
+order: 3
+---
+A util to modify an element's `display` property value to
+`flex`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: flex[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--f'>
+  This div is display value is set to: <em>flex</em>.
+</div>
+```
+*/
+}
+
+.u-d--if {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* ---
+section: u-d (Display)
+title: u-d--if (inline-flex)
+order: 4
+---
+A util to modify an element's `display` property value to
+`inline-flex`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: inline-flex[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--if'>
+  This div is display value is set to: <em>inline-flex</em>.
+</div>
+```
+*/
+}
+
+.u-d--i {
+  display: inline;
+  /* ---
+section: u-d (Display)
+title: u-d--i (inline)
+order: 5
+---
+A util to modify an element's `display` property value to
+`inline`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: inline[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--i'>
+  This div is display value is set to: <em>inline</em>.
+</div>
+```
+*/
+}
+
+.u-d--ib {
+  display: inline-block;
+  /* ---
+section: u-d (Display)
+title: u-d--ib (inline-block)
+order: 6
+---
+A util to modify an element's `display` property value to
+`inline-block`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: inline-block[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--ib'>
+  This div is display value is set to: <em>inline-block</em>.
+</div>
+```
+*/
+}
+
+.u-d--inher {
+  display: inherit;
+  /* ---
+section: u-d (Display)
+title: u-d--inher (inherit)
+order: 7
+---
+A util to modify an element's `display` property value to
+`inherit`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: inherit[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--inher'>
+  This div is display value is set to: <em>inherit</em>.
+</div>
+```
+*/
+}
+
+.u-d--init {
+  display: initial;
+  /* ---
+section: u-d (Display)
+title: u-d--init (initial)
+order: 8
+---
+A util to modify an element's `display` property value to
+`initial`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: initial[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--init'>
+  This div is display value is set to: <em>initial</em>.
+</div>
+```
+*/
+}
+
+.u-d--li {
+  display: list-item;
+  /* ---
+section: u-d (Display)
+title: u-d--li (list-item)
+order: 9
+---
+A util to modify an element's `display` property value to
+`list-item`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: list-item[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--li'>
+  This div is display value is set to: <em>list-item</em>.
+</div>
+```
+*/
+}
+
+.u-d--n {
+  display: none;
+  /* ---
+section: u-d (Display)
+title: u-d--n (none)
+order: 10
+---
+A util to modify an element's `display` property value to
+`none`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: none[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--n'>
+  This div is display value is set to: <em>none</em>.
+</div>
+```
+*/
+}
+
+.u-d--rb {
+  display: ruby;
+  /* ---
+section: u-d (Display)
+title: u-d--rb (ruby)
+order: 11
+---
+A util to modify an element's `display` property value to
+`ruby`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: ruby[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--rb'>
+  This div is display value is set to: <em>ruby</em>.
+</div>
+```
+*/
+}
+
+.u-d--rbb {
+  display: ruby-base;
+  /* ---
+section: u-d (Display)
+title: u-d--rbb (ruby-base)
+order: 12
+---
+A util to modify an element's `display` property value to
+`ruby-base`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: ruby-base[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--rbb'>
+  This div is display value is set to: <em>ruby-base</em>.
+</div>
+```
+*/
+}
+
+.u-d--rbbg {
+  display: ruby-base-group;
+  /* ---
+section: u-d (Display)
+title: u-d--rbbg (ruby-base-group)
+order: 13
+---
+A util to modify an element's `display` property value to
+`ruby-base-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: ruby-base-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--rbbg'>
+  This div is display value is set to: <em>ruby-base-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--rbt {
+  display: ruby-text;
+  /* ---
+section: u-d (Display)
+title: u-d--rbt (ruby-text)
+order: 14
+---
+A util to modify an element's `display` property value to
+`ruby-text`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: ruby-text[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--rbt'>
+  This div is display value is set to: <em>ruby-text</em>.
+</div>
+```
+*/
+}
+
+.u-d--rbtg {
+  display: ruby-text-group;
+  /* ---
+section: u-d (Display)
+title: u-d--rbtg (ruby-text-group)
+order: 15
+---
+A util to modify an element's `display` property value to
+`ruby-text-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: ruby-text-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--rbtg'>
+  This div is display value is set to: <em>ruby-text-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--ri {
+  display: run-in;
+  /* ---
+section: u-d (Display)
+title: u-d--ri (run-in)
+order: 16
+---
+A util to modify an element's `display` property value to
+`run-in`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: run-in[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--ri'>
+  This div is display value is set to: <em>run-in</em>.
+</div>
+```
+*/
+}
+
+.u-d--tb {
+  display: table;
+  /* ---
+section: u-d (Display)
+title: u-d--tb (table)
+order: 17
+---
+A util to modify an element's `display` property value to
+`table`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tb'>
+  This div is display value is set to: <em>table</em>.
+</div>
+```
+*/
+}
+
+.u-d--iteb {
+  display: inline-table;
+  /* ---
+section: u-d (Display)
+title: u-d--iteb (inline-table)
+order: 18
+---
+A util to modify an element's `display` property value to
+`inline-table`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: inline-table[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--iteb'>
+  This div is display value is set to: <em>inline-table</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbcp {
+  display: table-caption;
+  /* ---
+section: u-d (Display)
+title: u-d--tbcp (table-caption)
+order: 19
+---
+A util to modify an element's `display` property value to
+`table-caption`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-caption[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbcp'>
+  This div is display value is set to: <em>table-caption</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbcl {
+  display: table-column;
+  /* ---
+section: u-d (Display)
+title: u-d--tbcl (table-column)
+order: 20
+---
+A util to modify an element's `display` property value to
+`table-column`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-column[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbcl'>
+  This div is display value is set to: <em>table-column</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbclg {
+  display: table-column-group;
+  /* ---
+section: u-d (Display)
+title: u-d--tbclg (table-column-group)
+order: 21
+---
+A util to modify an element's `display` property value to
+`table-column-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-column-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbclg'>
+  This div is display value is set to: <em>table-column-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbhg {
+  display: table-header-group;
+  /* ---
+section: u-d (Display)
+title: u-d--tbhg (table-header-group)
+order: 22
+---
+A util to modify an element's `display` property value to
+`table-header-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-header-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbhg'>
+  This div is display value is set to: <em>table-header-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbfg {
+  display: table-footer-group;
+  /* ---
+section: u-d (Display)
+title: u-d--tbfg (table-footer-group)
+order: 23
+---
+A util to modify an element's `display` property value to
+`table-footer-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-footer-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbfg'>
+  This div is display value is set to: <em>table-footer-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbr {
+  display: table-row;
+  /* ---
+section: u-d (Display)
+title: u-d--tbr (table-row)
+order: 24
+---
+A util to modify an element's `display` property value to
+`table-row`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-row[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbr'>
+  This div is display value is set to: <em>table-row</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbrg {
+  display: table-row-group;
+  /* ---
+section: u-d (Display)
+title: u-d--tbrg (table-row-group)
+order: 25
+---
+A util to modify an element's `display` property value to
+`table-row-group`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-row-group[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbrg'>
+  This div is display value is set to: <em>table-row-group</em>.
+</div>
+```
+*/
+}
+
+.u-d--tbc {
+  display: table-cell;
+  /* ---
+section: u-d (Display)
+title: u-d--tbc (table-cell)
+order: 26
+---
+A util to modify an element's `display` property value to
+`table-cell`.
+
+#### Include with:
+
+```scss
+@include jigsass-util(u-d, $modifier: table-cell[, $from, $until, $misc]);
+```
+
+#### Example
+
+```example:html
+<div class='fpo u-d--tbc'>
+  This div is display value is set to: <em>table-cell</em>.
+</div>
+```
+*/
+}
+
+html {
+  font-size: 37.5%;
+}
+
+body {
+  font-size: 2.6666666667em;
+  line-height: 4rem;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 !important;
+}
+
+.fpo {
+  background-color: #09a5d9;
+  color: #fff;
+  padding: 1rem;
+}
+
+figure,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}

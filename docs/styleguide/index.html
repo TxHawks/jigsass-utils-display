@@ -1,0 +1,751 @@
+<!doctype html>
+<title>jigsass-utils-display</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css?05" rel="stylesheet">
+<link href="jigsass-logo.png" rel="shortcut icon">
+<script type="text/javascript">WebFontConfig={google:{families:["Roboto:400,100,300,500:latin"]}},function(){var e=document.createElement("script");e.src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",e.type="text/javascript",e.async="true";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+<script>examples={"base":"","target":"_self","css":["assets/sg.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto"};</script>
+
+<header>
+	<nav>
+		<img src="jigsass-logo.png" alt="jigsass-utils-display">
+		
+	<ul>
+		
+				<li>
+					<a href="#u-d-display"><span>u-d (Display)</span></a>
+					
+	<ul>
+		
+				<li>
+					<a href="#introduction"><span>Introduction</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--b-block"><span>u-d--b (block)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--cp-compact"><span>u-d--cp (compact)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--f-flex"><span>u-d--f (flex)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--if-inline-flex"><span>u-d--if (inline-flex)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--i-inline"><span>u-d--i (inline)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--ib-inline-block"><span>u-d--ib (inline-block)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--inher-inherit"><span>u-d--inher (inherit)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--init-initial"><span>u-d--init (initial)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--li-list-item"><span>u-d--li (list-item)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--n-none"><span>u-d--n (none)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--rb-ruby"><span>u-d--rb (ruby)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--rbb-ruby-base"><span>u-d--rbb (ruby-base)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--rbbg-ruby-base-group"><span>u-d--rbbg (ruby-base-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--rbt-ruby-text"><span>u-d--rbt (ruby-text)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--rbtg-ruby-text-group"><span>u-d--rbtg (ruby-text-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--ri-run-in"><span>u-d--ri (run-in)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tb-table"><span>u-d--tb (table)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--iteb-inline-table"><span>u-d--iteb (inline-table)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbcp-table-caption"><span>u-d--tbcp (table-caption)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbcl-table-column"><span>u-d--tbcl (table-column)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbclg-table-column-group"><span>u-d--tbclg (table-column-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbhg-table-header-group"><span>u-d--tbhg (table-header-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbfg-table-footer-group"><span>u-d--tbfg (table-footer-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbr-table-row"><span>u-d--tbr (table-row)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbrg-table-row-group"><span>u-d--tbrg (table-row-group)</span></a>
+					
+				</li>
+				
+				<li>
+					<a href="#u-d--tbc-table-cell"><span>u-d--tbc (table-cell)</span></a>
+					
+				</li>
+				
+	</ul>
+	
+				</li>
+				
+	</ul>
+	
+	</nav>
+</header>
+
+<main>
+	
+		<section id="u-d-display">
+			<h2>u-d (Display)</h2>
+			<div>
+				
+				
+		<section id="introduction">
+			<h3>Introduction</h3>
+			<div>
+				<p><a href="https://npmjs.org/package/jigsass-utils-display"><img src="https://badge.fury.io/js/jigsass-utils-display.svg" alt="NPM version"></a>
+<a href="https://david-dm.org/TxHawks/jigsass-utils-display"><img src="https://david-dm.org/TxHawks/jigsass-utils-display.svg?theme=shields.io" alt="Dependency Status"></a></p>
+<p>A collection of dynamically generated css <code>display</code> utility classes.</p>
+<p>Class names follow the <a href="http://docs.emmet.io/cheat-sheet/">Emmet</a> abbreviation
+syntax, with colons (&#39;:&#39;) replaced by two dashes (<code>--</code>) to follow BEM naming
+conventions (It modifiies the user agent&#39;s default display).
+E.g., the <code>display: none</code> utility class name is <code>.u-d--n</code>.</p>
+<h4 id="available-classes">Available classes</h4>
+<ul>
+<li><code>.d--b</code> (display: block)</li>
+<li><code>.d--f</code> (display: flex)</li>
+<li><code>.d--if</code> (display: inline-flex)</li>
+<li><code>.d--i</code> (display: inline)</li>
+<li><code>.d--ib</code> (display: inline-block)</li>
+<li><code>.d--inher</code> (display: inherit)</li>
+<li><code>.d--init</code> (display: initial)</li>
+<li><code>.d--li</code> (display: list-item)</li>
+<li><code>.d--n</code> (display: none)</li>
+<li><code>.d--tb</code> (display: table)</li>
+<li><code>.d--iteb</code> (display: inline-table)</li>
+<li><code>.d--tbcp</code> (display: table-caption)</li>
+<li><code>.d--tbcl</code> (display: table-column)</li>
+<li><code>.d--tbclg</code> (display: table-column-group)</li>
+<li><code>.d--tbhg</code> (display: table-header-group)</li>
+<li><code>.d--tbfg</code> (display: table-footer-group)</li>
+<li><code>.d--tbr</code> (display: table-row)</li>
+<li><code>.d--tbrg</code> (display: table-row-group)</li>
+<li><code>.d--tbc</code> (display: table-cell)</li>
+<li><code>.d--rb</code> (display: ruby)</li>
+<li><code>.d--rbb</code> (display: ruby-base)</li>
+<li><code>.d--rbbg</code> (display: ruby-base-group)</li>
+<li><code>.d--rbt</code> (display: ruby-text)</li>
+<li><code>.d--rbtg</code> (display: ruby-text-group)</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<p>Using npm:</p>
+<pre><code class="lang-sh">npm i -S jigsass-utils-display
+</code></pre>
+<h4 id="usage">Usage</h4>
+<p>Import JigSass Utils Display into your main scss file near its very end, together with all
+other utilities (utilities should always be the last to be imported).</p>
+<pre><code class="lang-scss">@import &#39;path/to/jigsass-utils-display/scss/index&#39;;
+</code></pre>
+<p>Like all other JigSass Utils, JigSass Display does not automatically generate any CSS
+when imported. You would need to explicitly indicate that each individual display
+class should actually be generated in each component or object it is used in
+(clarification: This will include style declarations inside <code>.foo</code> and .<code>bar</code>):</p>
+<pre><code class="lang-scss">// _c.foo.scss
+.foo {
+  @include jigsass-util(u-d, $modifier: b); // &lt;-- display: block
+
+  ...
+}
+</code></pre>
+<pre><code class="lang-scss">// _c.bar.scss
+.bar {
+  @include jigsass-util(u-d, $modifier: ib);  // &lt;-- display: inline-block
+  @include jigsass-util(
+    u-d,
+    $modifier: f,
+    $from: large
+  ); // &lt;-- display: flex from large bp an on.
+
+  ...
+}
+</code></pre>
+<p>Doing so helps us a great deal with portability, as no matter where we import component or object
+partials, the correct utility classes will be generated. Think of it as a poor man&#39;s dependency
+management.</p>
+<p>Developer communication is also assisted by including &quot;dependencies&quot; wherever they are required,
+as anyone going through a partial, can easily understand how it should be marked up with just a
+glance.</p>
+<p>As far as bloat goes, just don&#39;t worry about it - the actual styles will only be generated once,
+at the location in the cascade where the Jigsass Clearfix partial was imported into the main file.</p>
+<p>JigSass Display classes are responsive-enabled, using <a href="https://txhawks.github.io/jigsass-tools-mq/">JigSass MQ</a>
+and the breakpoints defined in the <a href="https://txhawks.github.io/jigsass-tools-mq/#variable-jigsass-breakpoints">$jigsass-breakpoints</a> variable.</p>
+<p>Based on the breakpoint arguments passed to <code>jigsass-util</code> when including a display class, responsive
+modifiers are generated according to the following logic:</p>
+<pre><code class="lang-scss">.u-d--&lt;modifier&gt;[-[-from-&lt;breakpoint-name&gt;][-until-&lt;breakpoint-name&gt;][-misc-&lt;breakpoint-name&gt;]]
+</code></pre>
+<p>So, assuming the <code>medium</code>, <code>large</code> and <code>landscape</code> breakpoints are defined in <code>$jigsass-breakpoints</code>
+as <code>600px</code>, <code>1024px</code> and <code>(orientation: landscape)</code> respectively,</p>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: f);
+</code></pre>
+<p>will generate the <code>.u-d--f</code> class, which is not limited to any media-query.</p>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: f, $until: medium);
+</code></pre>
+<p>will generate the <code>.u-d--f--until-medium</code> class, which will be in effect at
+<code>(max-width: 37.49em)</code> and will override styles in the default class until that point.</p>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: f, $from: large, $misc: landscape);
+</code></pre>
+<p>will generate the <code>.u-d--f--from-large-when-landscape</code> class, which will go into
+effect at <code>(min-width: 64em) and (orientation: landscape)</code> and will override styles in the default
+class under these  conditions.</p>
+<p><strong>License:</strong> MIT</p>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--b-block">
+			<h3>u-d--b (block)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>block</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: block[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--b&#39;&gt;
+  This div is display value is set to: &lt;em&gt;block&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--cp-compact">
+			<h3>u-d--cp (compact)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>compact</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: compact[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--cp&#39;&gt;
+  This div is display value is set to: &lt;em&gt;compact&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--f-flex">
+			<h3>u-d--f (flex)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>flex</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: flex[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--f&#39;&gt;
+  This div is display value is set to: &lt;em&gt;flex&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--if-inline-flex">
+			<h3>u-d--if (inline-flex)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>inline-flex</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: inline-flex[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--if&#39;&gt;
+  This div is display value is set to: &lt;em&gt;inline-flex&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--i-inline">
+			<h3>u-d--i (inline)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>inline</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: inline[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--i&#39;&gt;
+  This div is display value is set to: &lt;em&gt;inline&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--ib-inline-block">
+			<h3>u-d--ib (inline-block)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>inline-block</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: inline-block[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--ib&#39;&gt;
+  This div is display value is set to: &lt;em&gt;inline-block&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--inher-inherit">
+			<h3>u-d--inher (inherit)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>inherit</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: inherit[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--inher&#39;&gt;
+  This div is display value is set to: &lt;em&gt;inherit&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--init-initial">
+			<h3>u-d--init (initial)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>initial</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: initial[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--init&#39;&gt;
+  This div is display value is set to: &lt;em&gt;initial&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--li-list-item">
+			<h3>u-d--li (list-item)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>list-item</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: list-item[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--li&#39;&gt;
+  This div is display value is set to: &lt;em&gt;list-item&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--n-none">
+			<h3>u-d--n (none)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>none</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: none[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--n&#39;&gt;
+  This div is display value is set to: &lt;em&gt;none&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--rb-ruby">
+			<h3>u-d--rb (ruby)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>ruby</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: ruby[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--rb&#39;&gt;
+  This div is display value is set to: &lt;em&gt;ruby&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--rbb-ruby-base">
+			<h3>u-d--rbb (ruby-base)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>ruby-base</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: ruby-base[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--rbb&#39;&gt;
+  This div is display value is set to: &lt;em&gt;ruby-base&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--rbbg-ruby-base-group">
+			<h3>u-d--rbbg (ruby-base-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>ruby-base-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: ruby-base-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--rbbg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;ruby-base-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--rbt-ruby-text">
+			<h3>u-d--rbt (ruby-text)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>ruby-text</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: ruby-text[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--rbt&#39;&gt;
+  This div is display value is set to: &lt;em&gt;ruby-text&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--rbtg-ruby-text-group">
+			<h3>u-d--rbtg (ruby-text-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>ruby-text-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: ruby-text-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--rbtg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;ruby-text-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--ri-run-in">
+			<h3>u-d--ri (run-in)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>run-in</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: run-in[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--ri&#39;&gt;
+  This div is display value is set to: &lt;em&gt;run-in&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tb-table">
+			<h3>u-d--tb (table)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tb&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--iteb-inline-table">
+			<h3>u-d--iteb (inline-table)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>inline-table</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: inline-table[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--iteb&#39;&gt;
+  This div is display value is set to: &lt;em&gt;inline-table&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbcp-table-caption">
+			<h3>u-d--tbcp (table-caption)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-caption</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-caption[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbcp&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-caption&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbcl-table-column">
+			<h3>u-d--tbcl (table-column)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-column</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-column[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbcl&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-column&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbclg-table-column-group">
+			<h3>u-d--tbclg (table-column-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-column-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-column-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbclg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-column-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbhg-table-header-group">
+			<h3>u-d--tbhg (table-header-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-header-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-header-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbhg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-header-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbfg-table-footer-group">
+			<h3>u-d--tbfg (table-footer-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-footer-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-footer-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbfg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-footer-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbr-table-row">
+			<h3>u-d--tbr (table-row)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-row</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-row[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbr&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-row&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbrg-table-row-group">
+			<h3>u-d--tbrg (table-row-group)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-row-group</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-row-group[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbrg&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-row-group&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="u-d--tbc-table-cell">
+			<h3>u-d--tbc (table-cell)</h3>
+			<div>
+				<p>A util to modify an element&#39;s <code>display</code> property value to
+<code>table-cell</code>.</p>
+<h4 id="include-with-">Include with:</h4>
+<pre><code class="lang-scss">@include jigsass-util(u-d, $modifier: table-cell[, $from, $until, $misc]);
+</code></pre>
+<h4 id="example">Example</h4>
+<pre><code class="lang-example:html">&lt;div class=&#39;fpo u-d--tbc&#39;&gt;
+  This div is display value is set to: &lt;em&gt;table-cell&lt;/em&gt;.
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+	<footer>Last modified Saturday, 9 April 2016 13:36</footer>
+</main>
+<script src="prism.js"></script>
+<script src="examples.js"></script>
+<script src="script.js"></script>
+
