@@ -31,7 +31,7 @@
 
 // stylelint-disable
 /* ---
-section: u-d (Display)
+section: Display Utils
 title: Introduction
 order: -10
 ---
@@ -247,7 +247,7 @@ $_jigsass-util-display-i: 1;
     $_doclet-store: append($_doclet-store, $_doclet) !global;
     // stylelint-disable
 /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--#{$jigsass-util-modifier} (#{map-get($_jigsass-display-mod-to-style, $jigsass-util-modifier)})
 order: #{$_jigsass-util-display-i}
 ---
