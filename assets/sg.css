@@ -1,5 +1,5 @@
 /* ---
-section: u-d (Display)
+section: Display Utils
 title: Introduction
 order: -10
 ---
@@ -143,7 +143,7 @@ class under these  conditions.
 .u-d--b {
   display: block;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--b (block)
 order: 1
 ---
@@ -169,7 +169,7 @@ A util to modify an element's `display` property value to
 .u-d--cp {
   display: compact;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--cp (compact)
 order: 2
 ---
@@ -198,7 +198,7 @@ A util to modify an element's `display` property value to
   display: -ms-flexbox;
   display: flex;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--f (flex)
 order: 3
 ---
@@ -227,7 +227,7 @@ A util to modify an element's `display` property value to
   display: -ms-inline-flexbox;
   display: inline-flex;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--if (inline-flex)
 order: 4
 ---
@@ -253,7 +253,7 @@ A util to modify an element's `display` property value to
 .u-d--i {
   display: inline;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--i (inline)
 order: 5
 ---
@@ -279,7 +279,7 @@ A util to modify an element's `display` property value to
 .u-d--ib {
   display: inline-block;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--ib (inline-block)
 order: 6
 ---
@@ -305,7 +305,7 @@ A util to modify an element's `display` property value to
 .u-d--inher {
   display: inherit;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--inher (inherit)
 order: 7
 ---
@@ -331,7 +331,7 @@ A util to modify an element's `display` property value to
 .u-d--init {
   display: initial;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--init (initial)
 order: 8
 ---
@@ -357,7 +357,7 @@ A util to modify an element's `display` property value to
 .u-d--li {
   display: list-item;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--li (list-item)
 order: 9
 ---
@@ -383,7 +383,7 @@ A util to modify an element's `display` property value to
 .u-d--n {
   display: none;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--n (none)
 order: 10
 ---
@@ -409,7 +409,7 @@ A util to modify an element's `display` property value to
 .u-d--rb {
   display: ruby;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--rb (ruby)
 order: 11
 ---
@@ -435,7 +435,7 @@ A util to modify an element's `display` property value to
 .u-d--rbb {
   display: ruby-base;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--rbb (ruby-base)
 order: 12
 ---
@@ -461,7 +461,7 @@ A util to modify an element's `display` property value to
 .u-d--rbbg {
   display: ruby-base-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--rbbg (ruby-base-group)
 order: 13
 ---
@@ -487,7 +487,7 @@ A util to modify an element's `display` property value to
 .u-d--rbt {
   display: ruby-text;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--rbt (ruby-text)
 order: 14
 ---
@@ -513,7 +513,7 @@ A util to modify an element's `display` property value to
 .u-d--rbtg {
   display: ruby-text-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--rbtg (ruby-text-group)
 order: 15
 ---
@@ -539,7 +539,7 @@ A util to modify an element's `display` property value to
 .u-d--ri {
   display: run-in;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--ri (run-in)
 order: 16
 ---
@@ -565,7 +565,7 @@ A util to modify an element's `display` property value to
 .u-d--tb {
   display: table;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tb (table)
 order: 17
 ---
@@ -591,7 +591,7 @@ A util to modify an element's `display` property value to
 .u-d--iteb {
   display: inline-table;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--iteb (inline-table)
 order: 18
 ---
@@ -617,7 +617,7 @@ A util to modify an element's `display` property value to
 .u-d--tbcp {
   display: table-caption;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbcp (table-caption)
 order: 19
 ---
@@ -643,7 +643,7 @@ A util to modify an element's `display` property value to
 .u-d--tbcl {
   display: table-column;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbcl (table-column)
 order: 20
 ---
@@ -669,7 +669,7 @@ A util to modify an element's `display` property value to
 .u-d--tbclg {
   display: table-column-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbclg (table-column-group)
 order: 21
 ---
@@ -695,7 +695,7 @@ A util to modify an element's `display` property value to
 .u-d--tbhg {
   display: table-header-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbhg (table-header-group)
 order: 22
 ---
@@ -721,7 +721,7 @@ A util to modify an element's `display` property value to
 .u-d--tbfg {
   display: table-footer-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbfg (table-footer-group)
 order: 23
 ---
@@ -747,7 +747,7 @@ A util to modify an element's `display` property value to
 .u-d--tbr {
   display: table-row;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbr (table-row)
 order: 24
 ---
@@ -773,7 +773,7 @@ A util to modify an element's `display` property value to
 .u-d--tbrg {
   display: table-row-group;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbrg (table-row-group)
 order: 25
 ---
@@ -799,7 +799,7 @@ A util to modify an element's `display` property value to
 .u-d--tbc {
   display: table-cell;
   /* ---
-section: u-d (Display)
+section: Display Utils
 title: u-d--tbc (table-cell)
 order: 26
 ---
